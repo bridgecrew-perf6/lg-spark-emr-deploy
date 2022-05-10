@@ -1,0 +1,21 @@
+[
+    {
+        "Type": "SPARK",
+        "Name": "Data Digestion",
+        "ActionOnFailure": "CONTINUE",
+        "Jar": "command-runner.jar",
+        "Args": [
+            "--class",
+            "tv.lazygoat.datadigset.PrepareData",
+            "--master",
+            "yarn",
+            "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
+            "--input-dir=s3://lzg-dev-raw-data/",
+            "--output-dir=s3://lzg-dev-digested-data/",
+            "--dt-beg=2022-04-28",
+            "--dt-end=2022-05-02",
+            "--tm-beg=00",
+            "--tm-end=23"
+        ]
+    }
+]
