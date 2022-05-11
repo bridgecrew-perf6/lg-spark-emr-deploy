@@ -2,7 +2,7 @@
     {
         "Type": "SPARK",
         "Name": "Data Digestion",
-        "ActionOnFailure": "CONTINUE",
+        "ActionOnFailure": "TERMINATE_CLUSTER",
         "Jar": "command-runner.jar",
         "Args": [
             "--class",
@@ -12,10 +12,24 @@
             "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-dev-raw-data/",
             "--output-dir=s3://lzg-dev-digested-data/",
-            "--dt-beg=2022-04-28",
-            "--dt-end=2022-05-02",
-            "--tm-beg=00",
-            "--tm-end=23"
+            "--num-hours=5"
+        ]
+    },
+    {
+        "Type": "SPARK",
+        "Name": "Model Training",
+        "ActionOnFailure": "TERMINATE_CLUSTER",
+        "Jar": "command-runner.jar",
+        "Args": [
+            "--class",
+            "tv.lazygoat.ml.RecommendationSystem",
+            "--master",
+            "yarn",
+            "s3://lzg-dev-jars/streamers-recommendataion-assembly-0.1.0-SNAPSHOT.jar",
+            "--input-dir=s3://lzg-dev-digested-data/",
+            "--output-dir=s3://lzg-dev-models/latest/",
+            "--ts-path=s3://lzg-dev-digested-data/timestamp/",
+            "--mode=train"
         ]
     }
 ]
