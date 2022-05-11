@@ -12,7 +12,7 @@
             "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-dev-raw-data/",
             "--output-dir=s3://lzg-dev-digested-data/",
-            "--num-hours=5"
+            "--num-hours=100"
         ]
     },
     {
