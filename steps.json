@@ -1,22 +1,22 @@
 [
     {
         "Type": "SPARK",
-        "Name": "Data Digestion",
+        "Name": "Chatters Processing",
         "ActionOnFailure": "TERMINATE_CLUSTER",
         "Jar": "command-runner.jar",
         "Args": [
             "--class",
-            "tv.lazygoat.datadigset.PrepareData",
+            "tv.lazygoat.datadigset.ChattersProcessing",
             "--master",
             "yarn",
             "--driver-memory",
-            "12g",
+            "28g",
             "--executor-memory",
-            "8g",
-            "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
+            "20g",
+            "s3://lzg-dev-rs/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-dev-raw-data/",
             "--output-dir=s3://lzg-dev-digested-data/",
-            "--num-hours=100"
+            "--num-hours=168"
         ]
     },
     {
@@ -30,9 +30,8 @@
             "--master",
             "yarn",
             "s3://lzg-dev-jars/streamers-recommendataion-assembly-0.1.0-SNAPSHOT.jar",
-            "--input-dir=s3://lzg-dev-digested-data/",
-            "--output-dir=s3://lzg-dev-models/latest/",
-            "--ts-path=s3://lzg-dev-digested-data/timestamp/",
+            "--input-dir=s3://lzg-dev-digested-data",
+            "--output-dir=s3://lzg-dev-models",
             "--mode=train"
         ]
     }

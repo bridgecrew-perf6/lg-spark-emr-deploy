@@ -3,13 +3,13 @@
     "Name": "MasterFleet",
     "InstanceFleetType": "MASTER",
     "TargetOnDemandCapacity": 1,
-    "InstanceTypeConfigs": [{"InstanceType": "m5.xlarge"}]
+    "InstanceTypeConfigs": [{"InstanceType": "m5.2xlarge"}]
   },
   {
     "Name": "CoreFleet",
     "InstanceFleetType": "CORE",
-    "TargetSpotCapacity": 5,
-    "TargetOnDemandCapacity": 3,
+    "TargetOnDemandCapacity": 8,
+    "TargetSpotCapacity": 2,
     "LaunchSpecifications": {
       "SpotSpecification": {
         "TimeoutDurationMinutes": 15,
@@ -18,8 +18,8 @@
     },
     "InstanceTypeConfigs": [
       {
-        "InstanceType": "m5.xlarge",
-        "BidPriceAsPercentageOfOnDemandPrice": 50,
+        "InstanceType": "m5.2xlarge",
+        "BidPriceAsPercentageOfOnDemandPrice": 80,
         "WeightedCapacity": 2
       }
     ]
