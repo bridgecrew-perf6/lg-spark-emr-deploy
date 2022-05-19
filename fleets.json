@@ -3,12 +3,12 @@
     "Name": "MasterFleet",
     "InstanceFleetType": "MASTER",
     "TargetOnDemandCapacity": 1,
-    "InstanceTypeConfigs": [{"InstanceType": "m5.2xlarge"}]
+    "InstanceTypeConfigs": [{"InstanceType": "r6g.xlarge"}]
   },
   {
     "Name": "CoreFleet",
     "InstanceFleetType": "CORE",
-    "TargetOnDemandCapacity": 8,
+    "TargetOnDemandCapacity": 5,
     "TargetSpotCapacity": 2,
     "LaunchSpecifications": {
       "SpotSpecification": {
@@ -18,7 +18,7 @@
     },
     "InstanceTypeConfigs": [
       {
-        "InstanceType": "m5.2xlarge",
+        "InstanceType": "r6g.xlarge",
         "BidPriceAsPercentageOfOnDemandPrice": 80,
         "WeightedCapacity": 2
       }

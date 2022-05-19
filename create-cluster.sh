@@ -6,8 +6,8 @@ aws emr create-cluster \
     --applications Name=Spark \
     --steps file://steps.json \
     --use-default-roles  \
-    --ec2-attributes SubnetId=subnet-034f019c43155b205 \
-    --auto-terminate \
+    --ec2-attributes SubnetId=subnet-0ad138931468c444f \
     --instance-fleets file://fleets.json \
     --log-uri s3://lzg-dev-logs/ \
-    --auto-termination-policy IdleTimeout=120
+    --auto-termination-policy IdleTimeout=1000 \
+ | tee .cluster_id

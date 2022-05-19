@@ -10,10 +10,10 @@
             "--master",
             "yarn",
             "--driver-memory",
-            "28g",
+            "16g",
             "--executor-memory",
-            "20g",
-            "s3://lzg-dev-rs/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
+            "16g",
+            "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-dev-raw-data/",
             "--output-dir=s3://lzg-dev-digested-data/",
             "--num-hours=168"
