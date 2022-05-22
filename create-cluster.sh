@@ -9,5 +9,5 @@ aws emr create-cluster \
     --ec2-attributes SubnetId=subnet-0ad138931468c444f \
     --instance-fleets file://fleets.json \
     --log-uri s3://lzg-dev-logs/ \
-    --auto-termination-policy IdleTimeout=300 \
+    --auto-termination-policy IdleTimeout=1000 \
  | tee .cluster_id
