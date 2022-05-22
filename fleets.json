@@ -3,7 +3,7 @@
     "Name": "MasterFleet",
     "InstanceFleetType": "MASTER",
     "TargetOnDemandCapacity": 1,
-    "InstanceTypeConfigs": [{"InstanceType": "r6g.xlarge"}]
+    "InstanceTypeConfigs": [{"InstanceType": "r6g.2xlarge"}]
   },
   {
     "Name": "CoreFleet",
@@ -18,7 +18,7 @@
     },
     "InstanceTypeConfigs": [
       {
-        "InstanceType": "r6g.xlarge",
+        "InstanceType": "r6g.2xlarge",
         "BidPriceAsPercentageOfOnDemandPrice": 80,
         "WeightedCapacity": 2
       }
