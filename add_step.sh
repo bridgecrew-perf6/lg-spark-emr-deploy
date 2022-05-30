@@ -1,8 +1,8 @@
 #! /usr/bin/bash
 
 if [ -z $CLUSTER_ID ]; then
-    echo "Please set CLUSTER_ID as env. variable"
-    exit
+    echo "Reading cluster ID from .cluster_id"
+    CLUSTER_ID=$(jq '.ClusterId' .cluster_id | tr -d '"')
 fi
 
 if [ $# -ne 1 ]; then
