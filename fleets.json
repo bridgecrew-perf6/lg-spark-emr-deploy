@@ -8,8 +8,8 @@
   {
     "Name": "CoreFleet",
     "InstanceFleetType": "CORE",
-    "TargetOnDemandCapacity": 5,
-    "TargetSpotCapacity": 3,
+    "TargetOnDemandCapacity": 3,
+    "TargetSpotCapacity": 1,
     "LaunchSpecifications": {
       "SpotSpecification": {
         "TimeoutDurationMinutes": 15,
