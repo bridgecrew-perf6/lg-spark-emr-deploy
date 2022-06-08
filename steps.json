@@ -48,5 +48,16 @@
             "--output-dir=s3://lzg-dev-models",
             "--mode=train"
         ]
+    },
+    {
+        "Type": "CUSTOM_JAR",
+        "Name": "Redis Export",
+        "ActionOnFailure": "CONTINUE",
+        "Jar": "command-runner.jar",
+        "Args": [
+            "bash",
+            "-c",
+            "aws s3 cp s3://lzg-dev-jars/redis-export.sh /home/hadoop; chmod u+x /home/hadoop/redis-export.sh; /home/hadoop/redis-export.sh"
+        ]
     }
 ]
