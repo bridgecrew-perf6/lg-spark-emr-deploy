@@ -20,8 +20,6 @@
             "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-live-ai-data-collector/",
             "--output-dir=s3://lzg-dev-digested-data/",
-            "--start-date=2022-06-20",
-            "--start-hr=14",
             "--num-hours=1600"
         ]
     },

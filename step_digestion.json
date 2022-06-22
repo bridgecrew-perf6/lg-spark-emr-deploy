@@ -1,0 +1,26 @@
+[
+    {
+        "Type": "SPARK",
+        "Name": "Chatters Processing",
+        "ActionOnFailure": "CANCEL_AND_WAIT",
+        "Jar": "command-runner.jar",
+        "Args": [
+            "--class",
+            "tv.lazygoat.datadigset.ChattersProcessing",
+            "--master",
+            "yarn",
+            "--driver-memory",
+            "40g",
+            "--executor-memory",
+            "40g",
+            "--conf",
+            "yarn.nodemanager.resource.memory-mb=6000",
+            "--conf",
+            "yarn.scheduler.maximum-allocation-mb=6000",
+            "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
+            "--input-dir=s3://lzg-live-ai-data-collector/",
+            "--output-dir=s3://lzg-dev-digested-data/",
+            "--num-hours=1600"
+        ]
+    }
+]
