@@ -1,7 +1,7 @@
 [
     {
         "Type": "SPARK",
-        "Name": "Chatters Processing",
+        "Name": "Chatters Ranking",
         "ActionOnFailure": "CANCEL_AND_WAIT",
         "Jar": "command-runner.jar",
         "Args": [
@@ -20,7 +20,7 @@
             "s3://lzg-dev-jars/raw-data-processing-assembly-0.1.0-SNAPSHOT.jar",
             "--input-dir=s3://lzg-dev-digested-data/",
             "--output-dir=s3://lzg-dev-digested-data/",
-            "--num-hours=24",
+            "--num-hours=300",
             "--start-date=2022-06-14",
             "--start-hr=00"
         ]
